@@ -1,0 +1,13 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main ()
+{
+  string str;// = "Vivek Kumar Pandey";
+  cout << "Enter String"  << endl;
+  getline (cin, str);
+  cout << "\nLength = " << str.length() <<  endl;
+  return 0;
+}

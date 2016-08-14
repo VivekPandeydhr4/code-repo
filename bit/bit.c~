@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int next_2_power(int num)
+{
+  int i=0, n=1;
+  
+  while (num)
+    {
+      num = num>>1;
+      n = n<< 1;
+    }
+  return n;
+}
+
+int main()
+{
+  int num = 5;
+
+  printf("Next 2 Power = %d\n", next_2_power(num));
+
+  printf("\n");
+  return 0;
+}

@@ -1,0 +1,32 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+  /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+  int m=0, n=0, a;
+  cin >> m;
+  cin >> n;
+  int *c = new int [n];
+  for(int i=0; i<n; i++)
+    {
+      cin >> a;
+      c[i] = a;
+    }
+  sort(c,c+n);
+  for(int i=0, j=n-1; i<j; )
+    {
+      if((c[i]+c[j]) > m) j--;
+      else if ((c[i]+c[j]) < m) i++;
+      else
+	{
+	  cout << i+1 << " " << j+1 << endl;            
+	  break;
+	}
+    }
+  return 0;
+}

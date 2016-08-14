@@ -1,0 +1,46 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+
+#define SIZE 26
+
+using namespace std;
+
+
+int main() {
+  /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+  int tcase, num, flag=0;
+  int arr[SIZE] = {0};
+  string str;
+  cin >> tcase;
+  num = tcase;
+  getline(cin, str);
+  while(tcase--)
+    {
+      flag++;
+      getline(cin, str);
+      int len=str.length();
+      for(int i=0; i<len; i++)
+        {
+	  if(arr[str[i]-'a'] == flag-1)
+	    {
+	      arr[str[i]-'a']++;
+	      cout << str[i] << " ";
+	    }
+        }
+      cout << endl;
+    }
+  flag=0;
+  for(int i=0; i<SIZE; i++)
+    {
+      if(arr[i] == num)
+	{
+	  flag++;
+	  cout << i+1 << " ";
+	}
+    }
+  cout << endl << flag << endl;
+  return 0;
+}

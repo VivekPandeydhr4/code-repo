@@ -1,0 +1,119 @@
+#include "header.h"
+
+/**********************************************************************************
+Que). Given an array of any size containing only 0s and 1s then find out whether
+      the array containing equal number of 0s and 1s OR not.
+***********************************************************************************/
+int is_equal_1(int arr[], int size)
+{
+  int i, flag=0;
+
+  if(size%2)
+    {
+      printf("Odd number of element\n");
+      return -1;
+    }
+
+  for (i=0; i<size; i++)
+    {
+      if (arr[i]) flag++;
+      else flag--;
+    }
+
+  if(flag)
+    {
+      printf("1 => NOT EQUAL number of 0's & 1's \n");
+    }
+  else
+    {
+      printf("1 => EQUAL number of 0's & 1's \n");
+    }
+
+  return flag;
+}
+
+int is_equal_2(int arr[], int size)
+{
+  int i, sum=0;
+  
+  if(size%2)
+    {
+      printf("Odd number of element\n");
+      return -1;
+    }
+  for(i=0; i<size; i++)
+    {
+      sum += arr[i];
+    }
+  if(sum == size/2)
+    {
+      printf("2 => EQUAL number of 0's & 1's \n");
+    }
+  else
+    {
+      printf("2 => NOT EQUAL number of 0's & 1's \n");
+    }
+  return 0;
+}
+
+void longest_sub_array_with_equal_0_1(int arr[], int size)
+{
+  int i=0, j=0;
+  int low=0, high=0;
+  if (size==1)
+    {
+      printf("array with single element\n");
+      return;
+    }
+  int *asum = (int*)malloc(sizeof(int)*size);
+  asum[0] = arr[0];
+  for(i=1; i<size; i++)
+    {
+      asum[i] = asum[i-1] + arr[i];
+    }
+  printf("\nSum array\n");
+  print(asum, size);
+  if ((asum[size-1] == size)
+      || asum[size-1] == 0)
+    {
+      printf("array with all same element\n");
+      return;      
+    }
+  for (i=0; i<size; i++)
+    {
+      
+      for (j = i+(high-low); j<size; j++)
+	{
+	  int prev_sum = 0;
+	  if (i>0) prev_sum = asum[i-1];
+	  if((((j-i)%2)&& ((asum[j]-prev_sum) == ((j-i)+1)/2))
+	     && ((j-i) > (high-low)))
+	    {
+	      low = i;
+	      high = j;
+	    }
+	}
+    }
+  
+  printf("Array with equal 0 & 1 is 1st index= %d, 2nd index= %d\n", low, high);
+
+  print(arr+low, high-low+1);
+}
+
+int main ()
+{
+  /******************************************************/
+  int arr[] = {1, 1, 1, 1, 0};//, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1};
+  int size = sizeof(arr)/sizeof(int);
+  printf("Given array\n");
+  print(arr, size);
+  /******************************************************/
+
+  longest_sub_array_with_equal_0_1(arr, size);
+
+
+  //is_equal_1(arr, size);
+  //is_equal_2(arr,size);
+  printf("\n");
+  return 0;
+}

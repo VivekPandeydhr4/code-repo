@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+int main()
+{
+  const char ch1 = 'z';
+  const char ch2 = 'A';
+  int arr['Z' - 'a'] = {0};
+  printf("%d\n",'Z');
+  printf("%d\n",'a');
+  int size = sizeof(arr)/sizeof(int);
+
+  printf("Size = %d", size);
+
+  printf("\n");
+  return 0;
+}

@@ -1,0 +1,143 @@
+#include "header.h"
+
+void inorder(node* root)
+{
+  if(root)
+    {
+      inorder(root->left);
+      printf("%d ",root->data);
+      inorder(root->right);
+    }
+}
+
+int count_even_nodes(node* root)
+{
+  if (root)
+    {
+      int n1 = count_even_nodes(root->left);
+      int n2 = count_even_nodes(root->right);
+      
+      if (root->data%2)
+	return n1+n2;
+      else
+	{
+	  printf("\n%d", root->data);
+	  return n1+n2+1;
+	}
+    }
+  else return 0;
+}
+
+int is_sibling(node *root, int n1, int n2)
+{
+  int x=-1;
+
+  if (root)
+    {
+      if (root->left && root->right)
+	{
+	  if (((root->left->data == n1) && (root->right->data == n2)) || 
+              ((root->left->data == n2) && (root->right->data == n1)))
+	    {
+	      return 1;
+	    }
+	  else
+	    {
+	      x = is_sibling(root->left, n1, n2);
+	      if (x!=1)
+		x = is_sibling(root->right, n1, n2);
+	      return x;
+	    }
+	}
+    }
+  return 0;
+}
+
+void inorder_left(node* root, int flag)
+{
+  if (root)
+    {
+      inorder_left(root->left, 1);
+      if(flag)
+	printf("%d ",root->data);
+      inorder_left(root->right, 0);
+    }
+}
+
+int level(node* root, int n, int lvl)
+{
+  int x=-1;
+
+  if(root)
+    {
+      if (root->data == n) return lvl;
+      if (root->left)
+	  x = level(root->left, n, lvl+1);
+      if ((x==-1) && root->right)
+	{
+	  x = level(root->right, n, lvl+1);
+	}
+    }
+  return x;
+}
+
+int is_same_level(node* root, int n1, int n2)
+{
+  
+}
+
+void mirror_image(node* root)
+{
+  node* tmp=NULL;
+  if (root)
+    {
+      tmp = root->left;
+      root->left = root->right;
+      root->right = tmp;
+      
+      mirror_image(root->left);
+      mirror_image(root->right);
+    }
+}
+
+int main()
+{
+
+  node* root = make_tree();
+
+  printf("\n");                                                                                                                   
+  printf(" TREE INORDER:\n");                                                                                        
+  inorder(root);
+  printf("\n");                                                                                                                   
+
+  /*
+  printf(" Mirror TREE INORDER:\n");                                                                                        
+  mirror_image(root);
+  inorder(root);
+  printf("\n");                                                                                                                   
+  */
+  //  printf("\n No of Even nodes: %d\n", count_even_nodes(root));                                                                    
+  //printf("\n Sibling = %s\n", is_sibling(root, 5, 15) ? "Yes" : "No");                                                            
+
+  /*            
+  printf("\n Print Left of his father\n");
+  inorder_left(root, 1);
+  */
+  
+  /*
+  int lvl=0;
+  int n=16;
+  lvl = level(root, n, 0);
+  if (lvl == -1)
+    {
+      printf("\n*** Node not found ***\n");
+    }
+  else
+    {
+      printf("\nLevel = %d\n", lvl);
+    }
+  */
+  printf("\n\n");
+
+  return 0;
+}

@@ -1,0 +1,23 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+  int arr[] = {2,4,3,7,1,9,11,5,21,3,12,15,8,10};
+  int size = sizeof(arr)/sizeof(arr[0]);
+
+  cout << " Array =>>"<< endl;
+  for (int i=0; i<size; i++)
+    cout << arr[i] << " ";
+
+  sort(arr, arr+size);
+
+  cout << "\n Sorted array =>>"<< endl;
+  for (int i=0; i<size; i++)
+    cout << arr[i] << " ";
+
+  cout << endl;
+  return 0;
+}

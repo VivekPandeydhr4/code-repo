@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct NODE
+{
+  int x, y;
+  struct NODE* next;
+}node;
+
+node* add_node(node* head, int a, int b)
+{
+  node* temp;
+
+  node* newnode = (node*) malloc(sizeof(node));
+  newnode->x = a;
+  newnode->y = b;
+  newnode->next = NULL;
+
+  if (head == NULL) return newnode;
+
+  for(temp=head; temp->next!=NULL; temp=temp->next);
+
+  temp->next = newnode;
+
+  return head;
+}
+
+node* create_list(int arr[][2], int size)
+{
+  node* head = NULL;
+  int i=0;
+
+  for(i=0; i<size; i++)
+    head = add_node(head, arr[i][0], arr[i][1]);
+  return head;
+}
+
+void print_list (node* head)
+{
+  node* tmp = NULL;
+
+  for(tmp=head; tmp!=NULL && tmp->next!=NULL; tmp=tmp->next)
+    {
+      printf("(%d, %d)--> ", tmp->x, tmp->y);
+    }
+  if(tmp)
+    printf("(%d, %d)\n",tmp->x, tmp->y);
+}
+
+int main ()
+{
+  int arr[][2] = {
+                  {1, 2}, {1, 4}, {1, 5}, {1, 6}, 
+                  {3, 6}, {5, 6}, {6, 6}, {9, 6},
+                  {9, 7}, {9, 10}, {9, 12}, {9, 15},
+                 };
+
+  int size = sizeof(arr)/sizeof(arr[0]);
+
+  
+
+  printf("size = %d\n", size);
+  return 0;
+}
+
+
+

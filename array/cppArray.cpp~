@@ -1,0 +1,29 @@
+#include <iostream>
+#include <hash_map>
+
+using namespace std;
+
+bool is_dup_within_Kth_distant(int arr[], int size, int k)
+{
+  hash_map <int, int> hmap;
+
+  for(int i=0; i<size; i++)
+    {
+      hmap.insert(i, arr[i]);
+    }
+
+  for(int i=0; i<size; i++)
+    {
+      cout << "hmap [" << i << "]" << "=" hmap.get(i) << endl;
+    }
+
+  return false;
+}
+
+int main()
+{
+
+  
+  return 0;
+}
+

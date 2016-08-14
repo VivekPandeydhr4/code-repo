@@ -1,0 +1,102 @@
+#include "header.h"
+
+int wildcard_matching(char *p, char *T)
+{
+  int i=0;
+  int l;
+  char *w;
+  if(!p || !T) return 0;
+  if(!*p && !*T) return 1;
+  if(!*p) return 0;
+
+  if(!*T)
+    {
+      if (*p == '*' && *(p+1) == '\0')
+	return 1;
+      else
+	return 0;
+    }
+
+  if (*p == '?') return wildcard_matching(p+1, T+1);
+
+  if (*p == '*')
+    {
+      if(*(p+1) == '\0') return 1;
+      else
+	{
+	  l=strlen(p);
+	  w=(char*)malloc(l);
+	  for (i=1; p[i] && p[i] != '?' && p[i] != '*'; i++)
+	    w[i-1] = p[i];
+	  w[i-1] = '\0';
+	    
+	  char *t = strstr(T, w);
+	  if (t==NULL) return 0;
+	  else
+	    return wildcard_matching(p+i, t+strlen(w));
+	}
+    }
+}
+
+void print_sub_str(char *s, int i, int j)
+{
+  while(i<j) 
+    {
+      printf("%c", s[i]);
+      i++;
+    }
+  printf("\n");
+}
+
+void longest_even_len_equal_sum(char *str)
+{
+  int l, **m, w, i, flag;
+  
+  l = strlen(str);
+
+  m = (int**) malloc(l*sizeof(int*));
+
+  for(i=0; i<l; i++)
+    {
+      m[i] = (int*) malloc(l*sizeof(int));
+      memset(m[i], 0, l*sizeof(int));
+    }
+
+  for(w=2; w<l; w+=2)
+    {
+      for(i=0; i<=l-w; i++)
+	{
+	  m[i][i+w-1] = m[i+1][i+w-2]+str[i]-str[i+w-1];
+	}
+    }
+  w = w-2; flag=0;
+
+  while(w>=2)
+    {
+      for(i=0; i<= l-w; i++)
+	{
+	  if(m[i][i+w-1] == 0)
+	    {
+	      print_sub_str(str, i, i+w-1);
+	      flag = 1;
+	      break;
+	    }
+	}
+      if(flag) break;
+      w = w-2;
+    }
+  if(!flag) printf("No Such substring\n");
+}
+
+int main()
+{
+  char p[] = "*vipin*gutush*";
+  char T[] = "vivekgutushvikasass";
+
+  printf (" Pattern Match = %s\n", wildcard_matching(p, T) ? "Yes" : "No");
+
+  longest_even_len_equal_sum(T);
+
+  printf ("\n");
+  return 0;
+}

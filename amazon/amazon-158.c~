@@ -1,0 +1,45 @@
+#include "array.h"
+#include "list.h"
+#include "string.h"
+
+void permut_spc(char *str, char *buf, int i, int j)
+{
+  if (str[i] == '\0')
+    {
+      buf[j] = '\0';
+      printf("%s\n",buf);
+    }
+  else
+    {
+      buf[j] = str[i];
+      permut_spc(str, buf, i+1, j+1);
+      buf[j] = str[i];
+      buf[j+1] = ' ';
+      permut_spc(str, buf, i+1, j+2);
+      //i--;
+      //j = j - 2;
+      //buf[j++] = str[i++];
+      //permut_spc(str, buf, i+1, j+1); 
+      //i--;
+      //j--;
+    }
+}
+
+void str_spc_print(char *str)
+{
+  int n = strlen(str);
+  char *buf = (char*)malloc(2*n);
+
+  buf[0] = str[0];
+  permut_spc(str, buf, 0, 0);
+}
+
+int main()
+{
+  char str[] = "ABCD";
+
+  printf("\nGiven String = %s\n", str);
+  str_spc_print(str);
+  printf("\n");
+  return 0;
+}
