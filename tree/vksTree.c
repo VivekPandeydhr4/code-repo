@@ -161,7 +161,7 @@ void floor_ceiling_Key(node *root, int k)
 	}
     }
 }
-
+/*
 int isCousin(node *root, int a, int b)
 {
   if (!root) return 0;
@@ -195,7 +195,7 @@ int funCousin (node *root, int a, int b, int level)
     }
   if (l) return l;
   else return r;
-}
+  }*/
 
 int isSumTree (node *root)
 {
@@ -234,7 +234,37 @@ int maxPathSum(node *root)
   
   if (!root) return 0;
 
-  return funMPS(root, &leftSum)
+  return funMPS(root, &leftSum);
+}
+
+int size_BT(node* root)
+{
+  if(root)
+    return 1+size_BT(root->left)+size_BT(root->right);
+  else
+    return 0;
+}
+
+int fun_sum_root_to_leaf(node* root, int sofar)
+{
+  int l=0, r=0;
+  sofar = sofar+root->data;
+
+  if(root->left)
+    l = fun_sum_root_to_leaf(root->left, sofar*10);
+
+  if(root->right)
+    r = fun_sum_root_to_leaf(root->right, sofar*10);
+
+  return l+r;
+}
+
+int total_sum_root_to_leaf(node* root)
+{
+  if(root)
+    return fun_sum_root_to_leaf(root, 0);
+  else
+    return 0;
 }
 
 int main()
@@ -245,8 +275,32 @@ int main()
   inorder(root);
   printf("\n");
   /*****************************************/
+
+  node* testRt = create_node(9);
+  testRt->left = create_node(3);
+  testRt->right = create_node(1);
+  testRt->left->left = create_node(5);
+  testRt->left->right = create_node(3);
+  testRt->right->left = create_node(2);
+  printf("\n Print Test TREE INORDER:\n");
+  inorder(testRt);
+  int TotalSum = total_sum_root_to_leaf(testRt);
+  printf("\nTotal Sum root to leaf = %d", TotalSum);
+
+
+
+
+
+
+
+
+
   
-  printf(" Is Cousin = %s \n", (isCousin(root, 3, 5)?"Yes":"No"));
+  //int sizeBT = size_BT(root);
+  //printf("\n\tSize of BT = %d", sizeBT);
+
+  
+  //  printf(" Is Cousin = %s \n", (isCousin(root, 3, 5)?"Yes":"No"));
   //  floor_ceiling_Key(root, 4);
   /*
   int k = 12;
