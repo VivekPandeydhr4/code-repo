@@ -250,6 +250,7 @@ int fun_sum_root_to_leaf(node* root, int sofar)
   int l=0, r=0;
   sofar = sofar+root->data;
 
+  if(!root->left && !root->right) return sofar;
   if(root->left)
     l = fun_sum_root_to_leaf(root->left, sofar*10);
 
@@ -267,6 +268,43 @@ int total_sum_root_to_leaf(node* root)
     return 0;
 }
 
+/****************  T5  ***********************/
+void fun_nd_no_sibling(node* root, int toprint)
+{
+  if(toprint) printf("%d, ", root->data);
+  
+  if(root->left)
+    {
+      if(root->right) fun_nd_no_sibling(root->left, 0);
+      else fun_nd_no_sibling(root->left, 1);
+    }
+
+  if(root->right)
+    {
+      if(root->left) fun_nd_no_sibling(root->right, 0);
+      else fun_nd_no_sibling(root->right, 1);
+    }
+}
+void node_without_sibling(node* root)
+{
+  if(root)
+    {
+      fun_nd_no_sibling(root, 0);
+    }
+}
+
+/****************  T3  ***********************/
+int areIdentical(node* root1, node*root2)
+{
+  if(!root1 && !root2) return 1;
+  if((!root1 && root2) || (root1 && !root2)) return 0;
+
+  return (root1->data == root2->data) && 
+    areIdentical(root1->left, root2->left) &&
+    areIdentical(root1->right, root2->right);
+}
+
+
 int main()
 {
   /*****************************************/
@@ -276,16 +314,20 @@ int main()
   printf("\n");
   /*****************************************/
 
-  node* testRt = create_node(9);
-  testRt->left = create_node(3);
-  testRt->right = create_node(1);
-  testRt->left->left = create_node(5);
-  testRt->left->right = create_node(3);
-  testRt->right->left = create_node(2);
+  node* testRt = create_node(5);
+  testRt->left = create_node(2);
+  testRt->right = create_node(3);
+  node* testRt1 = NULL;//create_node(5);
+  //testRt1->left = create_node(2);
+  //  testRt1->right = create_node(3);
+
+  //testRt->left->left = create_node(1);
+  //testRt->left->right = create_node(7);
+  //  testRt->right->left = create_node(6);
   printf("\n Print Test TREE INORDER:\n");
   inorder(testRt);
-  int TotalSum = total_sum_root_to_leaf(testRt);
-  printf("\nTotal Sum root to leaf = %d", TotalSum);
+  printf("\n");
+  printf("Two trees are identical = %s\n", (areIdentical(testRt, testRt1))?"Yes":"No");
 
 
 
@@ -293,9 +335,13 @@ int main()
 
 
 
+  /*
+  printf("Node without sibling\n");
+  node_without_sibling(testRt);
 
-
-  
+    int TotalSum = total_sum_root_to_leaf(testRt);
+    printf("\nTotal Sum root to leaf = %d", TotalSum);
+   */
   //int sizeBT = size_BT(root);
   //printf("\n\tSize of BT = %d", sizeBT);
 
