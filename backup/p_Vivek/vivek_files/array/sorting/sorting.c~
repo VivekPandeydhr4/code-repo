@@ -1,0 +1,74 @@
+#include "header.h"
+
+void merge(int arr[], int l, int m, int r)
+{
+  int n1 = m-1+1;
+  int n2 = r-m;
+  int a1[n1], a2[n2];
+  int i, j, k;
+
+  for (i=0; i<n1; i++)
+    a1[i] = arr[l+i];
+
+  for (j=0; j<n2; j++)
+    a2[j] = arr[m+j+1];
+
+  i=0; j=0; k=l;
+
+  while (i<n1 && j<n2)
+    {
+      if (a1[i] <= a2[j])
+	{
+	  arr[k] = a1[i];
+	  i++;
+	}
+      else
+	{
+	  arr[k] = a2[j];
+	  j++;
+	}
+      k++;
+    }
+
+  while (i < n1)
+    {
+      arr[k] = a1[i];
+      k++;
+      i++;
+    }
+
+  while (j < n2)
+    {
+      arr[k] = a2[j];
+      k++;
+      j++;
+    }
+
+}
+
+void merge_sort(int arr[], int l, int r)
+{
+  if(l<r)
+    {
+      int m = l + (r-l)/2;
+      merge_sort(arr, l, m);
+      merge_sort(arr, m+1, r);
+      merge(arr, l, m, r);
+    }
+}
+
+int main ()
+{
+  /*************************************************************/
+  int arr[] = {-1, 11, 0, 2, 4, 3, 12, 6, -2, 10, -9, 8, 1};
+  int size = sizeof(arr)/sizeof(arr[0]);
+  printf(" Array :=>\n");
+  print(arr, size);
+  /*************************************************************/
+
+  merge_sort(arr, 0, size-1);
+  printf("\nAfter sorting :=>\n");
+  print(arr, size);
+  printf("\n");
+  return 0;
+}

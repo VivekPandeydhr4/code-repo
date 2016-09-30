@@ -1,0 +1,63 @@
+#include <iostream>
+#include <stdio.h>
+#include <limits.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stack>
+#include <queue>
+using namespace std;
+typedef struct node
+{
+  struct node *left;
+  int data;
+  struct node *right;
+}NODE;
+NODE* make_bst(void)
+{
+  return (NODE*)NULL;
+}
+void insert(NODE** proot, int x)
+{
+  NODE *temp,*parent,*newnode=(NODE*)malloc(sizeof(NODE));
+  newnode->data=x;
+  newnode->left=newnode->right=NULL;
+
+  if(*proot==NULL) *proot=newnode;
+  else{
+  for(temp=*proot;temp;)
+    {
+      parent=temp;
+      if(x<temp->data) temp=temp->left;
+      else temp=temp->right;
+    }
+  if(x<parent->data) parent->left=newnode;
+  else parent->right=newnode;
+  }
+}
+void insert_recly(NODE **proot, int x)
+{
+  NODE *newnode;
+  
+  if(*proot==NULL) {*proot=(NODE*)malloc(sizeof(NODE)); (*proot)->data=x;(*proot)->left=(*proot)->right=NULL;}
+  else if(x<(*proot)->data) insert_recly(&(*proot)->left,x);
+  else insert_recly(&(*proot)->right,x);
+}
+NODE * create_BST(int *A, int n)
+{
+  int i;
+  NODE *root;
+  root=make_bst();
+  for(i=0;A[i]!=-1;i++)
+    insert_recly(&root,A[i]);
+  return root;
+}
+void inorder(NODE *root)
+{
+  if(root)
+    {
+      inorder(root->left);
+      printf("%d ",root->data);
+      inorder(root->right);
+    }
+}
+/******************************************/

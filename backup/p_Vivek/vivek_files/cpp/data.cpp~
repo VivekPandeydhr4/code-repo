@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+class x
+{
+
+};
+
+class y : public x
+{
+
+};
+
+class z : public y
+{
+  
+};
+
+class A : public  y public z
+{
+
+};
+
+int main()
+{
+  cout << "Size of X = " << sizeof(x) << endl;
+  cout << "Size of Y = " << sizeof(y) << endl;
+  cout << "Size of Z = " << sizeof(z) << endl;
+  cout << "Size of A = " << sizeof(a) << endl;
+
+  return 0;
+}

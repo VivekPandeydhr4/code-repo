@@ -1,0 +1,119 @@
+1   11001   A NAGA SAI KARTHIK                     34      19    15    24     30    23.5
+2   11027   ABHISHEK KUMAR                         06.5    03    01    ABS    30    13
+3   11040   ADITYA NIGAM                           18.5    07    15    24     30    26.5
+4   11060   AKSHAY SINGHAL                         17.5    05.5  13    18     30    18.5
+5   11077   AMBATI RAJEEV BHAT                     40.5    17    6.5   19     24    24.5
+6   11148   ARISETTI PRUDHVI P                     30.5    12    10    15     17    13
+7   11168   ASHUTOSH KUMAR                         25      12    11.5  18     30    21.5
+8   11189   BALRAM MEENA                           06.5    05    13    22.5   30    09
+9   11209   BUNEDRI VIVEK                          13.5    03.5  12    21     30    23
+10  11289   GUNUPUDI NISHANTH                      10      07    10    21     30    21
+11  11321   ISHAAN DUBE                            27      11    15    24     30    23.5
+12  11380   KUMAVATH PARAMESWAR                    06      07    11    21     30    20.5
+13  11408   MANJUNATH                              ABS     ABS   ABS   ABS    ABS   ABS
+14  11620   S SAI KRISHNA PRASAD                   22      13    10.5  22.5   30    16.5
+15  11756   SWAROOP SINGH DEVAL                    11.5    ABS   10.5  ABS    ABS   09.5
+16  11770   TOLUPUNOORI CHANDRAKANTH               29      06.5  13    00     30    11
+17  11784   VAISHNAV EESHIT DHAVAL                 19.5    07.5  12.5  25     30    16.5
+18  11807   VINAY KYATHAM                          23      10.5  11.5  24.5   30    29
+19  12008   AAYUSH MUDGAL                          36.5    15.5  15    21     30    34
+20  12014   ABHILASH KUMAR                         26      14    12.5  15     30    27
+21  12016   ABHIMANYU JAIN ASATI                   14      13    14    18     30    31.5
+22  12043   ADITYA BHUTRA                          20.5    11.5  15    25     30    40
+23  12045   ADITYA MODI                            22.5    17.5  14    21     30    35.5
+24  12055   AJAY SHARMA                            30      12    14.5  21     25    28.5
+25  12056   AJAY SINGH                             13.5    ABS   03    20.5   25    18.5
+26  12067   AKSHAT BHATNAGAR                       29.5    15    11.5  23     30    27.5
+27  12068   AKSHAY  AGGARWAL                       38      16    15    24     30    45
+28  12082   AMAN ANAND                             14      15    14.5  23.5   22    09.5
+29  12085   AMAN KUMAR                             26      11.5  14    25     30    14.5
+30  12096   AMIT KUMAR                             20.5    06.5  13    24     24    14.5
+31  12098   AMIT KUMAR MEENA                       14.5    05    14.5  ABS    ABS   16
+32  12109   ANAND PANDEY                           29.5    09    10    23.5   30    14.5
+33  12128   ANKIT SINGH                            15      09    14.5  25     30    17
+34  12129   ANKITA PASRICHA                        39.5    10.5  14    24.5   25    38.5
+35  12144   ANURAG  MISRA                          11      11.5  00    ABS    ABS   18
+36  12148   ANUSHA CHOWDHURY                       28.5    11.5  15    25     30    25
+37  12150   ARADHANA SINGH                         08      05.5  12    25     30    22.5
+38  12152   ARCHIT  RATHORE                        23.5    08    14    21     30    21.5
+39  12157   ARNAB GHOSH                            35.5    07.5  13    24.5   30    24.5
+40  12161   ARPIT SHRIVASTAVA                      37      19    15    25     30    33
+41  12166   ASHISH BATLE                           09      05    12.5  23     30    16
+42  12178   AVIKALP KUMAR GUPTA                    22      09    08.5  18     25    16.5
+43  12181   AVINASH BHAWNANI                       17      12    02    24     25    14.5
+44  12185   AYUSH SEKHARI                          41.5    19    13    25     30    40
+45  12188   AYUSHMAN SINGH SISODIYA                08      03.5  15    19     25    27
+46  12218   CHIRAG GUPTA                           41      19    14    24     30    44
+47  12220   CHIRAG KATARIA                         18      10.5  14    24.5   30    26.5
+48  12228   DEEPAK KUMAR (S/O GR)                  10.5    09.5  14.5  23.5   30    12
+49  12243   DHRUV SINGAL                           19.5    11.5  9.5   15     30    35
+50  12250   DURGESH DEEP                           29.5    12    12    24     30    18.5
+51  12264   GARVIT PAHAL                           33.5    15    13    25     ABS   36
+52  12279   HARDIK BANSAL                          32      14.5  15    25     28    41
+53  12288   HARSHIT AGRAWAL                        39      10.5  14    24     28    37
+54  12298   HIMANSHU CHOUDHARY                     05      03    09    25     30    ABS
+55  12307   ISHAAN KUMAR                           29.5    02.5  14.5  25     30    28
+56  12308   JAIKISHAN RUPANI                       19.5    12.5  12.5  24     30    26.5
+57  12309   JANTRE SANKET RAJENDRA                 14.5    ABS   11    21     30    19.5
+58  12325   JITENDRA KUMAR NAGAR                   11      11    04    25     30    16.5
+59  12342   KARAN BANSAL                           14      13    11.5  24.5   30    30.5
+60  12349   KAVITI SAI SAURAB                      35      13.5  15    24     30    35
+61  12368   KUMAR GAURAV                           25.5    10.5  11    23     30    21.5
+62  12372   KUMAVATH VARSHINI                      11      05.5  09    25     30    19
+63  12373   KUNAL PATIL                            04.5    04    03.5  16     16    13
+64  12374   KUNDAN KRISHNA                         46      18    14.5  24.5   30    41
+65  12375   KUNDAN KUMAR                           33.5    19    13    24.5   30    39
+66  12383   LUCKY SAHANI                           15.5    07    15    25     30    15
+67  12390   MAHENDRA KUMAR MEENA (S/O JPM)         05.5    05    ABS   25     30    07
+68  12403   MASARE AKSHAY SUNIL|                27.5        09   12.5        24        25 23.5
+69  12416   MOHIT MAHORE|                        09.5        12   11        21        30 10.5
+70  12419   MOHIT SINGH SOLANKI|                23        04.5 12.5        16.5        30 25.5
+71  12454   NISHANT KUMAR SUNNY|                12.5        09.5 12        25        30 19.5
+72  12461   PALASH SHARMA|                        28.5        12.5 12.5        25        30 28
+73  12470   PATIL NIKHIL JAYWANT|        42        04   9.5        25        30 24
+74  12475   PEEYUSH AGARWAL|                33.5        10.5 12        24.5        30 34.5
+75  12485   PRACHI GUPTA|                        13        13   14        25        25 24.5
+76  12497   PRANAV RAVINDRA MANERIKER|        30        19.5 13.5        25        30 20.5
+77  12505   PRASHUN PRANJAL|                09        13   12.5        22.5        30 23
+78  12519   PRIYARANJAN|                        14        13   11        25        30 15
+79  12529   RAHUL(S/O JAIBHAGWAN)|        11        08   7        25        30 21
+80  12530   RAHUL (S/O RS)|                        14.5        07   11.5        25        30 08.5
+81  12532   RAHUL GURJAR|                        26.5        05.5 8.5        23        25 26
+82  12537   RAHUL MEHRA|                        09.5        11   12        24        30 21
+83  12538   RAHUL NAYAK|                        15.5        02   10        25        30 21
+84  12539   RAHUL P|                                05        02   5.5        21  ABS  14
+85  12543   RAJAT CHAUDHARY|                15.5        13   12.5        25        30 12
+86  12545   RAJAT KUMAR PANDA|                25.5        10   13        19        30 31.5
+87  12551   RAJNISH KAPOOR GANGULI|        24        13   12        25        16 11
+88  12560   RATNESH JAMIDAR|                14.5        08   12.5        23.5        25 17.5
+89  12562   RAUNAK SHAMNANI|                21        16   10.5        24        30 22
+90  12563   RAVI KIRAN S|                        14        08.5 5.5        25        30 18
+91  12564   RAVI KUMAR|                        03.5        00   ABS  0    ABS 14.5
+92  12585   ROHIT ANURAG|                        21.5        05   10        23.5        30 22.5
+93  12591   ROUNAK PODDAR|                        24        15   9        25        30 24
+94  12604   SAKSHI GUPTA|                        27        17   12        25        30 33.5
+95  12615   SANDIP KUMAR|                        21        05.5 8.5        ABS        30 25.5
+96  12616   SANIL JAIN|                        39        17   15        17        30 36
+97  12624   SAPTARSHI GAN|                        13.5        12   9.5        24.5        24 36.5
+98  12633   SATVIK GUPTA|                        50        15   14.5        23        30 38.5
+99  12640   SAURAV  SHEKHAR|                30        17   15        24        30 39.5
+100 12641   SAURAV KUMAR|                        43.5        14   11.5        23        30 15
+101 12658   SHARBATANU CHATTERJEE|        28        09   14.5        23        25 29
+102 12669   SHISHIR MATHUR|                        24.5        10   8        17         25 27
+103 12687   SHUBHAM AGRAWAL (S/O SKA)|        17.5        14   14.5        24        25 19
+104 12710   SHUBHANGEE VERMA|                29        15   11.5        23.5        25 23
+105 12714   SIDDHANT MANOCHA|                41        16.5 15        24        30 41.5
+106 12715   SIDDHANT SAURABH|                20.5        16   14        24.5        25 27.5
+107 12729   SRIKANT SINGH|                        24        12.5  13        25        30 17.5
+108 12734   SUDHIR|                                15        03    6.5        24        30 19
+109 12738   SUNIL CHAUDHARY|                19.5        07    10.5        24        30 15
+110 12775   UTSAV SINHA|                        29.5        16.5  11        21        30 28.5
+111 12785   VASU SHARMA|                        37        20    13.5        25        28 41.5
+112 12793   VICKI ANAND|                        34.5        16    12.5        24        25 22
+113 12806   VINAY KUMAR|                        16        08.5  8        17        30 24
+114 12813   VINEET PURSWANI|                30        15.5  9.5        21        30 29.5
+115 12823   VISHAL SINGH ARYA|                30        14    15        25        30 20.5
+116 12831   VIVEKA KULHARIA|                34        15    13        24.5        30 32.5
+117 Y9342   MOHIT KAUSHAL|                        07.5        07.5  3   ABS   ABS 13
+118 10133   ANURAG GAUTAM|                        07        10    10.5        24.5 ABS 15.5
+119 10569   RAJAT JAIN|                        12        10.5  ABS 18        30 14.5

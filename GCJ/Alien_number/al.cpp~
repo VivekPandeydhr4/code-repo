@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <map>
+using namespace std;
+
+void fun(long num, int base, char *tgt)
+{
+  if(num)
+    {
+      fun(num/base,base);
+      cout<<tgt[num%base];
+    }
+}
+
+int main() 
+{
+  int t;
+  char al[50],src[100],tgt[100];
+  while(t--)
+    {
+      scanf("%s %s %s",al,src,tgt);
+      for(i=0;src[i];i++) srcmap.insert(pair<char,int> p(src[i],i));
+        
+      num=0;
+      for(k=0;al[k];k++)  num=num*i+srcmap[al[k]];
+      cout <<"Case #"<<C++<<':'  
+      fun(num,strlen(tgt));
+      cout<<endl;
+      
+    }
+  return 0;
+}

@@ -1,0 +1,9 @@
+#include<stdio.h>
+#include<unistd.h>
+
+int mian
+{
+  printf("\n P Id: \n", (int)getpid());
+  printf("\n PP Id: \n", (int)getppid());
+  return 0;
+}

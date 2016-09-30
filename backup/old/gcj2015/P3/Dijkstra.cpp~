@@ -1,0 +1,16 @@
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
+
+using namespace std;
+typedef unsigned long long ULL;
+int main()
+{
+  int T;
+  ULL l,x;
+  cout << sizeof(ULL);
+
+
+  return 0;
+}

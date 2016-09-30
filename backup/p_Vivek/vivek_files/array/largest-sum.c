@@ -1,0 +1,46 @@
+#include "header.h"
+
+int* largest_sum(int arr[], int size, int *sub_arr_size)
+{
+  
+  int i=0, j=0, k=0, n=0, sum=0, max_sum=0;
+
+  for (i=0; i<size; i++)
+    {
+      for (j=i+1; j<size; j++)
+	{
+	  sum = 0;
+	  for (k=i; k<=j; k++)
+	    {
+	      sum += arr[k];
+	    }
+	  if (sum > max_sum)
+	    {
+	      max_sum = sum;
+	      *sub_arr_size = j-i+1;
+	      n = i;
+	    }
+	  //	  printf("Sum = %d, index = %d, size = %d, j=%d\n",sum, n, *sub_arr_size, j);
+	}
+    }
+  printf("Largest sum = %d\n", max_sum);
+  return (arr+n);
+}
+
+int main ()
+{
+  /*************************************************************/
+  int arr[] = {-1, 11, 0, 2, 4, -1, 6, -2, 1, 10, -9, 8, 1, 1};
+  int size = sizeof(arr)/sizeof(int);
+  printf(" Array :=>\n");
+  print(arr, size);
+  /*************************************************************/
+
+  int sub_arr_size, *sub_arr;
+
+  sub_arr = largest_sum(arr, size, &sub_arr_size);
+
+  print(sub_arr, sub_arr_size);
+
+  return 0;
+}

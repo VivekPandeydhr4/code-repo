@@ -1,0 +1,70 @@
+#include "header.h"
+
+/**********************************************************************************
+Que). Given an array of any size containing only 0s and 1s then find out whether
+      the array containing equal number of 0s and 1s OR not.
+***********************************************************************************/
+int is_equal_1(int arr[], int size)
+{
+  int i, flag=0;
+
+  if(size%2)
+    {
+      printf("Odd number of element\n");
+      return -1;
+    }
+
+  for (i=0; i<size; i++)
+    {
+      if (arr[i]) flag++;
+      else flag--;
+    }
+
+  if(flag)
+    {
+      printf("1 => NOT EQUAL number of 0's & 1's \n");
+    }
+  else
+    {
+      printf("1 => EQUAL number of 0's & 1's \n");
+    }
+
+  return flag;
+}
+
+int is_equal_2(int arr[], int size)
+{
+  int i, sum=0;
+  
+  if(size%2)
+    {
+      printf("Odd number of element\n");
+      return -1;
+    }
+  for(i=0; i<size; i++)
+    {
+      sum += arr[i];
+    }
+  if(sum == size/2)
+    {
+      printf("2 => EQUAL number of 0's & 1's \n");
+    }
+  else
+    {
+      printf("2 => NOT EQUAL number of 0's & 1's \n");
+    }
+  return 0;
+}
+/**************************************************************************/
+
+int main ()
+{
+
+  int arr[] = {1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1};
+  int size = sizeof(arr)/sizeof(int);
+  print(arr, size);
+  is_equal_1(arr, size);
+  is_equal_2(arr,size);
+
+  return 0;
+}

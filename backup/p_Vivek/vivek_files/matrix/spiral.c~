@@ -1,0 +1,45 @@
+//#include "header.h"
+
+#include<stdio.h>
+#include<stdlib.h>
+
+#define ROW 3
+#define COLUMN 4
+
+void print_matrix(int arr[][COLUMN])
+{
+  int i,j;
+
+  for(i=0,j=0; i<ROW; i++)
+    {
+      for(j=0; j<COLUMN; j++)
+	{
+	  printf("%2d ", arr[i][j]);
+	}
+      printf("\n\t");
+    }
+}
+
+void spiral_print(int arr[][COLUMN])
+{
+  int i, j, k, l;
+
+  for(k=ROW, l=COLUMN; )
+    {
+      
+    }
+}
+
+int main()
+{
+
+  int arr[][COLUMN] = { {01, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12} };
+
+  printf("\n *** ***  Matrix *** *** \n\n\t");
+
+  print_matrix(arr);
+
+  printf("\n");
+
+  return 0;
+}

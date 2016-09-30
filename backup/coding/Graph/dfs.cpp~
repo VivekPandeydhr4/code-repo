@@ -1,0 +1,89 @@
+#include <iostream>
+#include <vector>
+#include <cstring>
+#include <stack>
+#include <queue>
+
+#define NO_OF_NODES 100
+using namespace std;
+/*******************************************/
+int Time;
+vector<int> G[NO_OF_NODES+1];
+int color[NO_OF_NODES+1];
+unsigned int D[NO_OF_NODES+1];
+unsigned int F[NO_OF_NODES+1];
+/*******************************************/
+void DFS( int s);
+//void DFS(vector<int> G[], int u);
+void BFS(vector<int> G[], int s);
+void MST(vector<int> G[], int s);
+/*******************************************/
+int main()
+{
+  int n,m,j,i,u,v;
+  cin >> n >> m;
+  for(i=0;i<m;i++)
+    {
+      cin>>u>>v;
+      G[u].push_back(v);
+      G[v].push_back(u);
+    }
+  //MST(G,1);
+  DFS(1);
+  //memset(color,0,sizeof(color));
+  //MST(G,1);
+  cout <<endl;
+  return 0;
+}
+//void DFS(vector<int> G[], int s)
+void DFS(int s)
+{
+  cout << s <<" ";
+  color[s]=1;
+  vector<int>::iterator it=G[s].begin();
+  while(it!=G[s].end())
+    {
+      if(!color[*it]) DFS(*it);
+      it++;
+    }
+}
+
+void BFS(vector<int> G[], int s)
+{
+  int temp;
+  queue<int> Q;
+  vector<int>::iterator it;
+  Q.push(s);
+  color[s]=1;
+  while(!Q.empty())
+    {
+      temp=Q.front();
+      Q.pop();
+      for(it=G[temp].begin();it!=G[temp].end();it++)
+	{
+	  if(!color[*it]) {Q.push(*it);color[*it]=1;}
+	}
+      cout << temp <<" ";
+    }
+}
+/*
+void MST(vector<int> G[], int s, int n)
+{
+  memset(D,-1,sizeof(D));
+  memset(F,0,sizeof(F));
+  D[s]=0;
+  count=n;
+  while(count)
+    {
+      temp=min(D,n);//return index of the min in D[1...n];
+      D[temp]=0;
+      vector<int>::iterator it=G[temp].begin();
+      while(it!=G[temp].end())
+	{
+	  if(D[*it])
+	}
+    }
+
+}
+*/
+

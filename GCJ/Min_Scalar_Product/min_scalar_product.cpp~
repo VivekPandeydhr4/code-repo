@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cstdio>
+#include <vector>
+using namespace std;
+
+int main()
+{
+
+  int T, N, x,i;
+  vector<int> A, B;
+  long long result;
+  scanf("%d\n",&T);
+  while(T--)
+    {
+      scanf("%d\n",&N);
+      for(i=0;i<N;i++) {scanf("%d",&x); A.push_back(x);}
+      for(i=0;i<N;i++) {scanf("%d",&x); B.push_back(x);}
+      vector<int>::iterator it;
+      for(it=A.begin();it!=A.end();it++) printf("%d ",*it);
+      cout << endl;
+      for(it=B.begin();it!=B.end();it++) printf("%d ",*it);
+      cout << endl;
+    }
+  return 0;
+}
